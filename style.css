@@ -50,7 +50,16 @@ section{
     opacity: 1;
     text-decoration: underline;
     transition: all 0.35s;
+}
 
+.sun {
+    color: black;
+    opacity: 0.7;
+    transition: color 0.35s;
+}
+
+.sun:hover{
+    color: lightgreen;
 }
 
 #intro-section{
@@ -63,7 +72,8 @@ section{
 }
 
 #welcome-section{
-    margin:50px;
+    width: 100%;
+    /* margin:50px; */
     display: flex;
     justify-content: center;
 }
@@ -102,7 +112,7 @@ div.my-information{
 }
 
 #skills-section{
-    margin: 0 auto;
+    margin: 1rem auto;
     background-color: black;
     color: wheat;
 }
@@ -132,6 +142,16 @@ div.my-information{
 .skill-information progress{
     background-color: white;
     border: 1px solid white;
+    border-radius: 3px;
+}
+
+.skill-information progress::-moz-progress-bar{
+    background-color: black;
+    border-radius: 3px;
+}
+
+.skill-information progress::-moz-progress-value{
+    /* background-color: whit; */
 }
 
 .skill-information progress::-webkit-progress-value{
