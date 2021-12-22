@@ -1,42 +1,22 @@
-// window.onload = function(){
-//     var modeTheme = "day";
+let modeStatus = "day";
+let catcherModeSymbol = document.getElementsByClassName("switcher")[0];
 
-//     let modeButton = document.querySelector(".sun");
-//     let figure = document.querySelector(".fa-sun");
-//     let changesNight = [
-//         navbar = document.querySelector("#navbar ul li").childNodes,
-//         // body = document.querySelector("body"),
-//         // navbarList = document.querySelectorAll("#navbar > ul > li > a"), 
-//         welcomeSection = document.querySelector("#welcome-section"),
-//         aboutSection = document.querySelector("#about-section"),
-//         myProject = document.querySelector("#project-section")
-//     ];
+catcherModeSymbol.addEventListener("click", function(){
+    if (modeStatus ==="day" ? switchModeToNight() : switchModeToDay()); 
+});
 
-//     modeButton.addEventListener("click",function(){
-        
-//         switch (modeTheme){
-//             case "day":
-//                 document.getElementsByTagName('body')[0].style.color = "wheat";
-//                 figure.classList.remove("fa-sun");
-//                 figure.classList.add("fa-moon");
-//                 modeTheme = "night";
-//                 // document.getElementsByTagName("body")[0].style.backgroundColor = 'gray';
-//                 for(let el of changesNight){
-//                     console.log(el);
-//                     // el.style.color = "wheat";
-//                     el.style.backgroundColor = "black";
-//                     // el.style.color.
-//                 }
-//                 for(let e of changesNight.navbar){
-//                     e.style.color = "wheat";
-//                 }
-//                 break;
-            
-//             default:
-//                 figure.classList.remove("fa-moon");
-//                 figure.classList.add("fa-sun");
-//                 modeTheme = "day";
-//         }
-    
-//     });
-// }
+function switchModeToNight(){
+    catcherModeSymbol.classList.remove("fa-sun", "fas"); // remove sun symbol
+    catcherModeSymbol.classList.add("far","fa-moon"); //adding moon symbol
+    document.getElementsByTagName("body")[0].classList.add("night_mode");
+    document.querySelector("#navbar").style.background = "wheat";
+    modeStatus = "night";
+}
+
+function switchModeToDay(){
+    document.getElementsByTagName("body")[0].classList.remove("night_mode");
+    catcherModeSymbol.classList.remove("far","fa-moon"); //remove moon symbol
+    catcherModeSymbol.classList.add("fa-sun", "fas"); // adding sun symbol
+    document.querySelector("#navbar").style.background = "white";
+    modeStatus = "day";
+}

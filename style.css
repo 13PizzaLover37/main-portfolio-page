@@ -7,10 +7,19 @@ body{
     padding: 0;
     background-color: white;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+}
+
+/* For night mode */
+.night_mode{
+    background-color: #3f3f3f;
+    color: wheat ;
+    transition: 0.5s;
 }
 
 #navbar{
     display: flex;
+    z-index: 1;
     margin: 0;
     padding: 5 0;
     width: 100%;
@@ -52,13 +61,13 @@ section{
     transition: all 0.35s;
 }
 
-.sun {
+.switch-mode {
     color: black;
     opacity: 0.7;
     transition: color 0.35s;
 }
 
-.sun:hover{
+.switch-mode:hover{
     color: lightgreen;
 }
 
@@ -114,6 +123,7 @@ div.my-information{
 #skills-section{
     margin: 1rem auto;
     background-color: black;
+    opacity: 0.8;
     color: wheat;
 }
 
@@ -194,6 +204,7 @@ div.my-information{
 
 #contact-section{
     background-color: black;
+    opacity: 0.7;
     color: wheat;
     padding: 50px;
     text-align: center;
